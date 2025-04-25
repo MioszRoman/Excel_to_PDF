@@ -39,5 +39,13 @@ for filepath in filepaths:
         pdf.cell(w=30, h=8, txt=f"{row['total_price']}", border=1, ln=1)
 
 
+    total_sum = df['total_price'].sum()
+    pdf.set_font(family='Times', size=12)
+    pdf.set_text_color(80, 80, 80)
+    pdf.cell(w=30, h=8, txt='')
+    pdf.cell(w=60, h=8, txt='')
+    pdf.cell(w=40, h=8, txt='')
+    pdf.cell(w=30, h=8, txt='')
+    pdf.cell(w=30, h=8, txt=str(total_sum), border=1, ln=1)
 
     pdf.output(f"PDFs/{filename}.pdf")
