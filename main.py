@@ -29,6 +29,15 @@ for filepath in filepaths:
     pdf.cell(w=30, h=8, txt=columns[4], border=1, ln=1)
 
 
+    for index, row in df.iterrows():
+        pdf.set_font(family='Times', size=12)
+        pdf.set_text_color(80, 80, 80)
+        pdf.cell(w=30, h=8, txt=f"{row['product_id']}", border=1)
+        pdf.cell(w=60, h=8, txt=f"{row['product_name']}", border=1)
+        pdf.cell(w=40, h=8, txt=f"{row['amount_purchased']}", border=1)
+        pdf.cell(w=30, h=8, txt=f"{row['price_per_unit']}", border=1)
+        pdf.cell(w=30, h=8, txt=f"{row['total_price']}", border=1, ln=1)
+
 
 
     pdf.output(f"PDFs/{filename}.pdf")
