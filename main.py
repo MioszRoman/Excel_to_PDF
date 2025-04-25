@@ -14,3 +14,8 @@ for filepath in filepaths:
     filename = Path(filepath).stem
     invoice_number, invoice_date = filename.split('-')
 
+    pdf.set_font(family='Times', style='B', size=24)
+    pdf.cell(w=50, h=8, txt=f"Invoice number. {invoice_number}", ln=1)
+    pdf.cell(w=50, h=8, txt=f"Date: {invoice_date}", ln=1)
+
+    pdf.output(f"PDFs/{filename}.pdf")
