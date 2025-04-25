@@ -18,4 +18,17 @@ for filepath in filepaths:
     pdf.cell(w=50, h=8, txt=f"Invoice number. {invoice_number}", ln=1)
     pdf.cell(w=50, h=8, txt=f"Date: {invoice_date}", ln=1)
 
+    pdf.ln(10)
+    columns = list(df.columns)
+    columns = [item.replace('_', ' ').title() for item in columns]
+    pdf.set_font(family='Times', style='B', size=12)
+    pdf.cell(w=30, h=8, txt=columns[0], border=1)
+    pdf.cell(w=60, h=8, txt=columns[1], border=1)
+    pdf.cell(w=40, h=8, txt=columns[2], border=1)
+    pdf.cell(w=30, h=8, txt=columns[3], border=1)
+    pdf.cell(w=30, h=8, txt=columns[4], border=1, ln=1)
+
+
+
+
     pdf.output(f"PDFs/{filename}.pdf")
