@@ -11,4 +11,6 @@ for filepath in filepaths:
     pdf = FPDF(orientation='P', unit='mm', format='A4')
     pdf.add_page()
 
+    filename = Path(filepath).stem
+    invoice_number, invoice_date = filename.split('-')
 
