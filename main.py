@@ -48,4 +48,10 @@ for filepath in filepaths:
     pdf.cell(w=30, h=8, txt='')
     pdf.cell(w=30, h=8, txt=str(total_sum), border=1, ln=1)
 
+    pdf.ln(15)
+
+    pdf.set_font(family='Times', style='B', size=16)
+    pdf.cell(w=50, h=8, txt=f"The total price is: {str(total_sum)}", ln=1)
+    pdf.cell(w=50, h=8, txt="Here should be a logo and company name, but I don't have it.", ln=1)
+
     pdf.output(f"PDFs/{filename}.pdf")
